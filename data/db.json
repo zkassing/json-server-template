@@ -1,0 +1,79 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "zhangsan",
+      "password": "123456",
+      "avatar": "2022_1_12/43e077ccfc0a73a1b1f93db2519f6d33.png"
+    },
+    {
+      "username": "lisi",
+      "password": "123456",
+      "id": 2,
+      "avatar": "2022_1_12/43e077ccfc0a73a1b1f93db2519f6d33.png"
+    }
+  ],
+  "single": [
+    {
+      "id": 1,
+      "name": "测试数据"
+    }
+  ],
+  "parents": [
+    {
+      "id": 1,
+      "name": "表关系测试数据 一"
+    }
+  ],
+
+  "children": [
+    {
+      "id": 1,
+      "name": "表关系测试数据 多",
+      "parentId": 1
+    }
+  ],
+
+  "teachers": [
+    {
+      "id": 1,
+      "name": "章三"
+    }, 
+    {
+      "id": 2,
+      "name": "李四"
+    }
+  ],
+  "students": [
+    {
+      "id": 1,
+      "name": "学生1"
+    }, 
+    {
+      "id": 2,
+      "name": "学生2"
+    }
+  ],
+  "stdatas": [
+    {
+      "id": 1,
+      "studentId": 1,
+      "teacherId": 1
+    }, 
+    {
+      "id": 2,
+      "studentId": 1,
+      "teacherId": 2
+    },
+    {
+      "id": 3,
+      "studentId": 2,
+      "teacherId": 1
+    },
+    {
+      "id": 4,
+      "studentId": 2,
+      "teacherId": 2
+    }
+  ]
+}
