@@ -8,7 +8,7 @@ const middlewares = jsonServer.defaults({
   static: './upload'
 })
 
-const { tokenPropName } = require('./config.js')
+const { tokenPropName, delay } = require('./config.js')
 const { verify, sign } = require('./utils/jwt')
 
 const multer = require('multer')
@@ -33,9 +33,8 @@ server.post('/upload', (req, res) => {
       throw err
     }
 
-
     const filename = `${dirname}/${req.files[0].filename}${path.parse(req.files[0].originalname).ext}`
-
+    
     fs.rename(req.files[0].path, `upload/${filename}`, function(err){
       if(err){
         res.jsonp({
@@ -53,16 +52,12 @@ server.post('/upload', (req, res) => {
       }
     })
 
-  })
-
-  
-
-
-  
+  })  
 })
 
 
 server.use(async (req, res, next) => {
+  req.query._delay = delay
   if (('/__rules', '/db', '/upload').includes(req.path)) {
     next()
     return false
